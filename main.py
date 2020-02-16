@@ -1,9 +1,9 @@
 # Author: Autumnhui
 from PIL import Image, ImageDraw, ImageFont
 
-font_size = 3   # 字体大小
-text = "文字"   #文字内容
-img_path = "/Users/autumnhui/Desktop/death.jpeg"  # 图片来源
+font_size = 7   # 字体大小
+text = "文字内容"   #文字内容
+img_path = "/Users/autumnhui/Desktop/show.jpeg"  # 图片来源
 
 img_raw = Image.open(img_path)
 img_array = img_raw.load()
@@ -23,4 +23,4 @@ for y in range(0, img_raw.size[1], font_size):
     for x in range(0, img_raw.size[0], font_size):
         draw.text((x, y), next(ch_gen), font=font, fill=img_array[x, y], direction=None)
 
-img_new.convert('RGB').save("/Users/autumnhui/Desktop/a.jpeg") # 文件导出（具体到文件）
+img_new.convert('RGB').save("show1.jpeg") # 文件导出（可以增加路径）
