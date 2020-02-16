@@ -13,12 +13,14 @@ draw = ImageDraw.Draw(img_new)
 font = ImageFont.truetype('/Library/Fonts/STHeiti Medium.ttc', font_size) # 字体路径
 
 def character_generator(text):
+    '''循环书写字符'''
     while True:
         for i in range(len(text)):
             yield text[i]
 
 ch_gen = character_generator(text)
 
+# 字符加颜色，写入新创建的图片中
 for y in range(0, img_raw.size[1], font_size):
     for x in range(0, img_raw.size[0], font_size):
         draw.text((x, y), next(ch_gen), font=font, fill=img_array[x, y], direction=None)
